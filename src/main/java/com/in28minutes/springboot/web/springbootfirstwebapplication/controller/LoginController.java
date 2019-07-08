@@ -14,7 +14,7 @@ public class LoginController {
 		model.put("name", name);
 		return "login";
 	}
-	
+	//
 	/*
 	@RequestMapping("/login")
 	@ResponseBody
