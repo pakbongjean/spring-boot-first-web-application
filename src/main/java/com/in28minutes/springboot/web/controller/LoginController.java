@@ -14,7 +14,6 @@ import com.in28minutes.springboot.web.service.LoginService;
 @SessionAttributes("name")
 public class LoginController {
 	
-	
 	//LoginService service = new LoginService();
 	@Autowired
 	LoginService service;

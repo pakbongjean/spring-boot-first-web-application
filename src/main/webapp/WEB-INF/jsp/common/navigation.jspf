@@ -1,4 +1,7 @@
-<nav role="navigation" class="navbar navbar-default">
+<!-- <nav role="navigation" class="navbar navbar-default bg-light"> -->
+<!-- <nav role="navigation" class="navbar navbar-default"> -->
+<!-- <nav role="navigation" class="navbar navbar-expand-lg navbar-light bg-light"> -->
+<nav role="navigation" class="navbar navbar-light" style="background-color: #e3f2fd;">
 	    <div class="">
 	        <a href="http://www.in28minutes.com" class="navbar-brand">in28Minutes</a>
 	    </div>

@@ -45,8 +45,7 @@ public class TodoController {
 
 	@RequestMapping(value = "/add-todo", method = RequestMethod.GET)
 	public String showAddTodoPage(ModelMap model) {
-		model.addAttribute("todo", new Todo(0, (String) model.get("name"),
-		  "Default Desc", new Date(), false));
+		model.addAttribute("todo", new Todo(0, (String) model.get("name"), "", new Date(), false));
 		return "todo";
 	}
 
@@ -57,7 +56,7 @@ public class TodoController {
 	}
 	
 	@RequestMapping(value = "/update-todo", method = RequestMethod.GET)
-	public String showUpdateTodoPage(@RequestParam int id,ModelMap model) {
+	public String showUpdateTodoPage(ModelMap model,@RequestParam int id) {
 		Todo todo = service.retrieveTodo(id);
 		model.put("todo",todo);
 		return "todo";
