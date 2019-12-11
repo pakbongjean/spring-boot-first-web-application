@@ -16,7 +16,9 @@
 <%@ include file="common/navigation.jspf" %>
 
 	<div class="container">
-		<%-- <form:form method="post" commandName="todo"> --%>
+		<%-- <form:form method="post" commandName="todo"> commandName is not work 
+		example https://www.baeldung.com/spring-mvc-form-tutorial
+		--%>
 		<form:form modelAttribute="todo" method="post" >
 			<fieldset class="form-group">
 				<form:label path="desc">Description</form:label> 
