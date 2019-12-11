@@ -14,9 +14,12 @@ import com.in28minutes.springboot.web.service.LoginService;
 @SessionAttributes("name")
 public class LoginController {
 	
-	//LoginService service = new LoginService();
+		
+	// Injection Automatically
 	@Autowired
 	LoginService service;
+	//LoginService service = new LoginService();
+	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
     public String showLoginPage(ModelMap model) {
@@ -37,21 +40,5 @@ public class LoginController {
         model.put("password", password);
         return "welcome";
     }
-	
-	/*
-	@RequestMapping("/login")
-	public String loginMessage(@RequestParam String name, ModelMap model){
-		model.put("name", name);
-		return "login";
-	}
-	*/
-	
-	/* display text in response body * 
-	@RequestMapping("/login")
-	@ResponseBody
-	public String loginMessage(){
-		return "Hello World";
-	}
-	*/
-	
+
 }

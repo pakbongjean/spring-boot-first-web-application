@@ -49,19 +49,6 @@ public class TodoController {
 		return "todo";
 	}
 
-	@RequestMapping(value = "/delete-todo", method = RequestMethod.GET)
-	public String deleteTodo(@RequestParam int id) {
-		service.deleteTodo(id);
-		return "redirect:/list-todos";
-	}
-	
-	@RequestMapping(value = "/update-todo", method = RequestMethod.GET)
-	public String showUpdateTodoPage(ModelMap model,@RequestParam int id) {
-		Todo todo = service.retrieveTodo(id);
-		model.put("todo",todo);
-		return "todo";
-	}
-	
 	@RequestMapping(value = "/add-todo", method = RequestMethod.POST)
 	public String addTodo(ModelMap model, @Valid Todo todo , BindingResult result) {
 		
@@ -74,17 +61,29 @@ public class TodoController {
 		return "redirect:/list-todos";
 	}
 	
+	@RequestMapping(value = "/update-todo", method = RequestMethod.GET)
+	public String showUpdateTodoPage(ModelMap model,@RequestParam int id) {
+		Todo todo = service.retrieveTodo(id);
+		model.put("todo",todo);
+		return "todo";
+	}
+	
 	@RequestMapping(value = "/update-todo", method = RequestMethod.POST)
+	// Have Validator >> BindingResult
 	public String updateTodo(ModelMap model, @Valid Todo todo ,BindingResult result) {
 		if(result.hasErrors()){
 			return "todo";
 		}
 		
-		/*todo.setId((int) model.get("id"));*/
-		
 		todo.setUser((String) model.get("name"));
 		service.updateTodo(todo);
 		
+		return "redirect:/list-todos";
+	}
+	
+	@RequestMapping(value = "/delete-todo", method = RequestMethod.GET)
+	public String deleteTodo(@RequestParam int id) {
+		service.deleteTodo(id);
 		return "redirect:/list-todos";
 	}
 	
