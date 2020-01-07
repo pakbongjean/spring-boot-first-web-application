@@ -27,4 +27,5 @@
 		<input type="submit" />
 	</form>
 </div>
+
 <%@ include file="common/footer.jspf" %>

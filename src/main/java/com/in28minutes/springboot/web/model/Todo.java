@@ -16,22 +16,27 @@ import lombok.NoArgsConstructor;
 public class Todo {
 
 	private int id;
-	
-	@EqualsAndHashCode.Exclude
-	private String user;    
-    
-    @Size(min=10, message="Enter at least 10 Characters...")
-    @EqualsAndHashCode.Exclude
-    private String desc;
-    
-    @EqualsAndHashCode.Exclude
-    private Date targetDate;
-    
-    @EqualsAndHashCode.Exclude
-    private boolean isDone;
 
-    
-    
+	@EqualsAndHashCode.Exclude
+	private String user;
+
+	@Size(min = 10, message = "Enter at least 10 Characters...")
+	@EqualsAndHashCode.Exclude
+	private String desc;
+
+	/*
+	 * /^(0?[1-9]|1[0-2])[\/](0?[1-9]|[12]\d|3[01])[\/](19|20)\d{2}$/
+	 */
+	@EqualsAndHashCode.Exclude
+	/*
+	 * @Pattern(message = "Invalid M/D/YYYY or MM/DD/YYYY", regexp =
+	 * "^(0?[1-9]|1[0-2])[\\/](0?[1-9]|[12]\\d|3[01])[\\/](19|20)\\d{2}$")
+	 */
+	private Date targetDate;
+
+	@EqualsAndHashCode.Exclude
+	private boolean isDone;
+
 //    public Todo() {
 //    		super();
 //    }
@@ -110,14 +115,12 @@ public class Todo {
 //        }
 //        return true;
 //    }
-    
-    
+
 //    @Override
 //    public String toString() {
 //        return String.format(
 //                "Todo [id=%s, user=%s, desc=%s, targetDate=%s, isDone=%s]", id,
 //                user, desc, targetDate, isDone);
 //    }
-        
 
 }

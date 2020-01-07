@@ -19,7 +19,7 @@
 		<%-- <form:form method="post" commandName="todo"> commandName is not work 
 		example https://www.baeldung.com/spring-mvc-form-tutorial
 		--%>
-		<form:form modelAttribute="todo" method="post" >
+		<form:form method="post" modelAttribute="todo">
 			<fieldset class="form-group">
 				<form:label path="desc">Description</form:label> 
 				<form:input path="desc" type="text" class="form-control" required="required"/>
