@@ -1,12 +1,17 @@
 package com.in28minutes.springboot.web.service;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-//Spring Bean
-@Component
+@Service
 public class LoginService {
-	
-	public boolean validateUser(String userId,String password) {
-		return userId.equalsIgnoreCase("in28Minutes") && password.equals("1234");
+
+	public boolean validateUser(String userid, String password) {
+		// in28minutes, dummy
+		return userid.equalsIgnoreCase("in28minutes")
+				&& password.equalsIgnoreCase("dummy");
 	}
+	
+	
+	
+	
 }

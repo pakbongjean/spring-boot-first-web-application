@@ -4,7 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-/* @ComponentScan("com.in28minutes") */
 public class SpringBootFirstWebApplication {
 
 	public static void main(String[] args) {
